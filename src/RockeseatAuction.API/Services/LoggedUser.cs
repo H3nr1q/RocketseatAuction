@@ -4,7 +4,7 @@ using RockeseatAuction.API.Repositories;
 
 namespace RockeseatAuction.API.Services
 {
-    public class LoggedUser
+    public class LoggedUser : ILoggedUser
     {
         private readonly IHttpContextAccessor contextAccessor;
         private readonly IUserRepository userRepository;
@@ -37,6 +37,11 @@ namespace RockeseatAuction.API.Services
             var data = Convert.FromBase64String(base64);
 
             return System.Text.Encoding.UTF8.GetString(data);
+        }
+
+        User ILoggedUser.User()
+        {
+            throw new NotImplementedException();
         }
     }
 }

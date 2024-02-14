@@ -7,7 +7,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5B44B52E-39E
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{2A844ABA-FB9D-48DE-9C7C-4C42FBBE8BB2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockeseatAuction.API", "src\RockeseatAuction.API\RockeseatAuction.API.csproj", "{343B249F-D637-4930-9F8C-F6EAE8EB3190}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RockeseatAuction.API", "src\RockeseatAuction.API\RockeseatAuction.API.csproj", "{343B249F-D637-4930-9F8C-F6EAE8EB3190}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UseCases.Test", "tests\UseCases.Test\UseCases.Test.csproj", "{6F91AA75-A8FC-47AA-A431-51780FCF3C5D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,12 +21,17 @@ Global
 		{343B249F-D637-4930-9F8C-F6EAE8EB3190}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{343B249F-D637-4930-9F8C-F6EAE8EB3190}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{343B249F-D637-4930-9F8C-F6EAE8EB3190}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F91AA75-A8FC-47AA-A431-51780FCF3C5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F91AA75-A8FC-47AA-A431-51780FCF3C5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F91AA75-A8FC-47AA-A431-51780FCF3C5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F91AA75-A8FC-47AA-A431-51780FCF3C5D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{343B249F-D637-4930-9F8C-F6EAE8EB3190} = {5B44B52E-39E6-47D5-B871-5CF18DE163DA}
+		{6F91AA75-A8FC-47AA-A431-51780FCF3C5D} = {2A844ABA-FB9D-48DE-9C7C-4C42FBBE8BB2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DEFCBF44-AEE8-4F02-9A51-5F9B0B9B36B4}

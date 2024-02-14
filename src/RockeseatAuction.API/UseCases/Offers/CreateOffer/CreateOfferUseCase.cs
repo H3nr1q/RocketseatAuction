@@ -8,10 +8,10 @@ namespace RockeseatAuction.API.UseCases.Offers.CreateOffer
 {
     public class CreateOfferUseCase
     {
-        private readonly LoggedUser loggedUser;
+        private readonly ILoggedUser loggedUser;
         private readonly IOfferRepository offerRepository;
 
-        public CreateOfferUseCase(LoggedUser loggedUser, IOfferRepository offerRepository)
+        public CreateOfferUseCase(ILoggedUser loggedUser, IOfferRepository offerRepository)
         {
             this.loggedUser=loggedUser;
             this.offerRepository=offerRepository;

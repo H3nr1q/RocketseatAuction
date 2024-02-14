@@ -1,21 +1,20 @@
 ﻿using RockeseatAuction.API.Repositories;
 using RockeseatAuction.API.Entities;
 using Microsoft.EntityFrameworkCore;
+using RockeseatAuction.API.Contracts;
 
 namespace RockeseatAuction.API.UseCases.Auctions.GetCurrent
 {
     public class GetCurrentAictonUseCase
     {
+        private readonly IAuctionRepository repository;
+
+        public GetCurrentAictonUseCase(IAuctionRepository repository) => this.repository=repository;
+
         public Auction? Execute()
         {
-            var repository = new RocketseatAuctionDbContext();
-
-            var today = DateTime.Now;
+            return this.repository.GetCurrent();
             
-            return repository
-                .Auctions
-                .Include(auction => auction.Items)
-                .FirstOrDefault(auction => today >= auction.Starts && today <= auction.Ends);
         }
     }
 }

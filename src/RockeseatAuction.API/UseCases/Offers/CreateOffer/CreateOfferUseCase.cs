@@ -1,4 +1,5 @@
 ﻿using RockeseatAuction.API.Communication.Requests;
+using RockeseatAuction.API.Contracts;
 using RockeseatAuction.API.Entities;
 using RockeseatAuction.API.Repositories;
 using RockeseatAuction.API.Services;
@@ -8,12 +9,16 @@ namespace RockeseatAuction.API.UseCases.Offers.CreateOffer
     public class CreateOfferUseCase
     {
         private readonly LoggedUser loggedUser;
-        public CreateOfferUseCase(LoggedUser loggedUser) => this.loggedUser = loggedUser;
-        
+        private readonly IOfferRepository offerRepository;
+
+        public CreateOfferUseCase(LoggedUser loggedUser, IOfferRepository offerRepository)
+        {
+            this.loggedUser=loggedUser;
+            this.offerRepository=offerRepository;
+        }
+
         public int Execute(int itemId, RequestCreateOfferJson request)
         {
-            var repository = new RocketseatAuctionDbContext();
-
             var user = this.loggedUser.User();
 
             var offer = new Offer
@@ -25,9 +30,7 @@ namespace RockeseatAuction.API.UseCases.Offers.CreateOffer
 
             };
 
-            repository.Offers.Add(offer);
-
-            repository.SaveChanges();
+            offerRepository.Add( offer );   
 
             return offer.Id;
         }

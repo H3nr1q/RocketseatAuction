@@ -10,9 +10,8 @@ namespace RockeseatAuction.API.Controllers
         [HttpGet]
         [ProducesResponseType(typeof(Auction), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        public IActionResult GetCurrentAuction()
+        public IActionResult GetCurrentAuction([FromServices] GetCurrentAictonUseCase useCase)
         {
-            var useCase = new GetCurrentAictonUseCase();
             var result = useCase.Execute();
 
             if(result is null)
@@ -21,4 +20,6 @@ namespace RockeseatAuction.API.Controllers
             return Ok(result);
         }
     }
+
+    //Y3Jpc3RpYW5vQGNyaXN0aWFuby5jb20=
 }
